@@ -1,0 +1,2 @@
+jaito@gmail.com
+$2y$10$R92y2.YmI41UEmcK1MOX5.O89R6m7mvSaVYuCW.AQa2rwmJQZMORi
