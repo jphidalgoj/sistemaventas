@@ -16,7 +16,7 @@ include('../app/controllers/almacen/cargar_producto.php');
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1 class="m-0">Producto <?= $nombre;?></h1>
+                    <h1 class="m-0">Producto <?= $nombre;?> a ser eliminado</h1>
                 </div><!-- /.col -->
 
             </div><!-- /.row -->
@@ -30,9 +30,9 @@ include('../app/controllers/almacen/cargar_producto.php');
     <div class="content">
         <div class="container-fluid">
             <div class="col-md-12">
-                <div class="card card-primary">
+                <div class="card card-danger">
                     <div class="card-header">
-                        <h3 class="card-title">Datos</h3>
+                        <h3 class="card-title">¿Estas seguro de eliminar el producto?</h3>
                         <div class="card-tools">
                             <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                             </button>
@@ -43,15 +43,15 @@ include('../app/controllers/almacen/cargar_producto.php');
                     <div class="card-body" style="display: block;">
                         <div class="row">
                             <div class="col-md 12">
-                                <form action="../app/controllers/almacen/create.php" method="post" enctype="multipart/form-data">
+                                <form action="../app/controllers/almacen/delete.php" method="post" enctype="multipart/form-data">
+                                    <input type="text" value="<?= $id_producto_get?>" name="id_producto">
 
                                     <div class="row">
                                         <div class="col-md-9">
                                             <div class="row">
                                                 <div class="col-md-4">
                                                     <div class="form-group">
-                                                        <label for="">Codigo:</label>
-                                                        
+                                                        <label for="">Codigo:</label>                                
                                                         <input type="text" class="form-control" value="<?=$codigo; ?>" disabled>
                                                         
                                                     </div>
@@ -114,6 +114,7 @@ include('../app/controllers/almacen/cargar_producto.php');
                                                 <label for="">Imagen</label>
                                                 <center>
                                                     <img src="<?php echo $URL ."/almacen/img_productos/".$imagen;?>" alt="" width="100%">
+                                                    
                                                 </center>
                                             </div>    
                                         </div>
@@ -137,6 +138,7 @@ include('../app/controllers/almacen/cargar_producto.php');
 
                                     <div class="form-group">
                                         <a href="index.php" class="btn btn-secundary">Atras</a>
+                                        <button type="submit" class="btn btn-danger">Eliminar Producto</button>
                             
                                     </div>
                                 </form>
